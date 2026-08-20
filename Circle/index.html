@@ -358,114 +358,135 @@
       </div>
     </section>
 
-    <!-- COMMUNITY SHOWCASE (3D TILT CARDS) -->
-    <section id="categories" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono font-bold uppercase tracking-widest text-pink-600 block mb-3">02 // Community Categories</span>
-        <h2 class="font-outfit font-extrabold text-4xl sm:text-6xl text-slate-900 tracking-tight mb-4">
+    <!-- COMMUNITY SHOWCASE (NETWORK NODE CARDS) -->
+    <section id="categories" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white relative overflow-hidden">
+      
+      <!-- Connection Pulse Lines SVG Overlay -->
+      <div class="hidden md:block absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="network-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6366f1" />
+              <stop offset="50%" stop-color="#ec4899" />
+              <stop offset="100%" stop-color="#3b82f6" />
+            </linearGradient>
+          </defs>
+          <path id="node-connection-line" d="M 200 450 Q 500 400 800 450 T 1100 450" fill="none" stroke="url(#network-line-gradient)" stroke-width="2.5" stroke-dasharray="600" stroke-dashoffset="600" opacity="0" />
+        </svg>
+      </div>
+
+      <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
+        <span id="categories-label" class="text-xs font-mono font-bold uppercase tracking-widest text-pink-600 block mb-3">02 // Community Categories</span>
+        <h2 id="categories-heading" class="font-outfit font-extrabold text-4xl sm:text-6xl text-slate-900 tracking-tight mb-4">
           Built For Every <span class="text-gradient-pink">Creative Discipline</span>
         </h2>
-        <p class="text-slate-600 text-base">
+        <p id="categories-desc" class="text-slate-600 text-base">
           Diverse verticals united under one curated ecosystem in Pune.
         </p>
       </div>
 
-      <!-- Grid of 3D Tilt Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Grid of Network Node Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         
         <!-- Card 1: Startups & SaaS -->
-        <div class="tilt-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-rocket"></i>
+        <div class="category-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md" data-gather-x="140" data-gather-y="20" data-theme="indigo">
+          <div class="category-data-sweep" aria-hidden="true"></div>
+          <div class="category-icon-box w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 text-2xl mb-6 transition-all duration-300">
+            <i class="fa-solid fa-rocket category-icon transition-transform duration-300"></i>
           </div>
-          <span class="text-xs font-mono text-indigo-600 font-bold uppercase block mb-2">1,240+ Members</span>
+          <span class="category-count text-xs font-mono text-indigo-600 font-bold uppercase block mb-2" data-count="1240" data-suffix="+ Members">0+ Members</span>
           <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-3">Startups & SaaS</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             B2B SaaS founders, indie hackers, and micro-SaaS builders shipping from Baner and Hinjewadi.
           </p>
           <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-xs text-slate-500 font-semibold">Baner & Hinjewadi</span>
-            <i class="fa-solid fa-chevron-right text-indigo-600 text-xs group-hover:translate-x-1 transition-transform"></i>
+            <span class="category-location text-xs text-slate-500 font-semibold transition-all duration-300">Baner & Hinjewadi</span>
+            <i class="fa-solid fa-chevron-right text-indigo-600 text-xs category-arrow transition-transform duration-300"></i>
           </div>
         </div>
 
         <!-- Card 2: UI/UX Designers -->
-        <div class="tilt-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-pink-50 border border-pink-200 flex items-center justify-center text-pink-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-palette"></i>
+        <div class="category-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md" data-gather-x="0" data-gather-y="35" data-theme="pink">
+          <div class="category-data-sweep" aria-hidden="true"></div>
+          <div class="category-icon-box w-14 h-14 rounded-2xl bg-pink-50 border border-pink-200 flex items-center justify-center text-pink-600 text-2xl mb-6 transition-all duration-300">
+            <i class="fa-solid fa-palette category-icon transition-transform duration-300"></i>
           </div>
-          <span class="text-xs font-mono text-pink-600 font-bold uppercase block mb-2">890+ Members</span>
+          <span class="category-count text-xs font-mono text-pink-600 font-bold uppercase block mb-2" data-count="890" data-suffix="+ Members">0+ Members</span>
           <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-3">UI/UX & Product</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             Product designers, visual architects, and design system leads pushing pixel perfection.
           </p>
           <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-xs text-slate-500 font-semibold">Koregaon Park</span>
-            <i class="fa-solid fa-chevron-right text-pink-600 text-xs group-hover:translate-x-1 transition-transform"></i>
+            <span class="category-location text-xs text-slate-500 font-semibold transition-all duration-300">Koregaon Park</span>
+            <i class="fa-solid fa-chevron-right text-pink-600 text-xs category-arrow transition-transform duration-300"></i>
           </div>
         </div>
 
         <!-- Card 3: AI & Developers -->
-        <div class="tilt-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-code"></i>
+        <div class="category-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md" data-gather-x="-140" data-gather-y="20" data-theme="blue">
+          <div class="category-data-sweep" aria-hidden="true"></div>
+          <div class="category-icon-box w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 text-2xl mb-6 transition-all duration-300">
+            <i class="fa-solid fa-code category-icon transition-transform duration-300"></i>
           </div>
-          <span class="text-xs font-mono text-blue-600 font-bold uppercase block mb-2">1,480+ Members</span>
+          <span class="category-count text-xs font-mono text-blue-600 font-bold uppercase block mb-2" data-count="1480" data-suffix="+ Members">0+ Members</span>
           <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-3">AI & Full Stack</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             LLM fine-tuners, React/Node architects, and system engineers crafting autonomous agents.
           </p>
           <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-xs text-slate-500 font-semibold">Hinjewadi & Kharadi</span>
-            <i class="fa-solid fa-chevron-right text-blue-600 text-xs group-hover:translate-x-1 transition-transform"></i>
+            <span class="category-location text-xs text-slate-500 font-semibold transition-all duration-300">Hinjewadi & Kharadi</span>
+            <i class="fa-solid fa-chevron-right text-blue-600 text-xs category-arrow transition-transform duration-300"></i>
           </div>
         </div>
 
         <!-- Card 4: Creators & Media -->
-        <div class="tilt-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-video"></i>
+        <div class="category-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md" data-gather-x="140" data-gather-y="20" data-theme="amber">
+          <div class="category-data-sweep" aria-hidden="true"></div>
+          <div class="category-icon-box w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-2xl mb-6 transition-all duration-300">
+            <i class="fa-solid fa-video category-icon transition-transform duration-300"></i>
           </div>
-          <span class="text-xs font-mono text-amber-600 font-bold uppercase block mb-2">520+ Members</span>
+          <span class="category-count text-xs font-mono text-amber-600 font-bold uppercase block mb-2" data-count="520" data-suffix="+ Members">0+ Members</span>
           <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-3">Content Creators</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             YouTube tech reviewers, newsletter authors, and podcasters amplifying Pune's brand.
           </p>
           <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-xs text-slate-500 font-semibold">Viman Nagar</span>
-            <i class="fa-solid fa-chevron-right text-amber-600 text-xs group-hover:translate-x-1 transition-transform"></i>
+            <span class="category-location text-xs text-slate-500 font-semibold transition-all duration-300">Viman Nagar</span>
+            <i class="fa-solid fa-chevron-right text-amber-600 text-xs category-arrow transition-transform duration-300"></i>
           </div>
         </div>
 
         <!-- Card 5: Angel Investors & VCs -->
-        <div class="tilt-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-coins"></i>
+        <div class="category-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md" data-gather-x="0" data-gather-y="35" data-theme="emerald">
+          <div class="category-data-sweep" aria-hidden="true"></div>
+          <div class="category-icon-box w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 text-2xl mb-6 transition-all duration-300">
+            <i class="fa-solid fa-coins category-icon transition-transform duration-300"></i>
           </div>
-          <span class="text-xs font-mono text-emerald-600 font-bold uppercase block mb-2">140+ Members</span>
+          <span class="category-count text-xs font-mono text-emerald-600 font-bold uppercase block mb-2" data-count="140" data-suffix="+ Members">0+ Members</span>
           <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-3">Investors & VCs</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             Early-stage angel syndicates, venture partners, and operators writing check sizes from $25k+.
           </p>
           <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-xs text-slate-500 font-semibold">Pune Syndicate</span>
-            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs group-hover:translate-x-1 transition-transform"></i>
+            <span class="category-location text-xs text-slate-500 font-semibold transition-all duration-300">Pune Syndicate</span>
+            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs category-arrow transition-transform duration-300"></i>
           </div>
         </div>
 
         <!-- Card 6: Student Pioneers -->
-        <div class="tilt-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="category-card glass-panel glass-panel-hover p-8 rounded-3xl border-slate-200 bg-white relative overflow-hidden group cursor-pointer shadow-md" data-gather-x="-140" data-gather-y="20" data-theme="purple">
+          <div class="category-data-sweep" aria-hidden="true"></div>
+          <div class="category-icon-box w-14 h-14 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 text-2xl mb-6 transition-all duration-300">
+            <i class="fa-solid fa-graduation-cap category-icon transition-transform duration-300"></i>
           </div>
-          <span class="text-xs font-mono text-purple-600 font-bold uppercase block mb-2">420+ Members</span>
+          <span class="category-count text-xs font-mono text-purple-600 font-bold uppercase block mb-2" data-count="420" data-suffix="+ Members">0+ Members</span>
           <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-3">Student Pioneers</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             High-potential engineering students from COEP, MIT, and PICT founding campus startups.
           </p>
           <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-xs text-slate-500 font-semibold">Wakad & Kothrud</span>
-            <i class="fa-solid fa-chevron-right text-purple-600 text-xs group-hover:translate-x-1 transition-transform"></i>
+            <span class="category-location text-xs text-slate-500 font-semibold transition-all duration-300">Wakad & Kothrud</span>
+            <i class="fa-solid fa-chevron-right text-purple-600 text-xs category-arrow transition-transform duration-300"></i>
           </div>
         </div>
 
@@ -476,13 +497,13 @@
     <section id="events" class="horizontal-events-container relative py-20 bg-slate-100 border-y border-slate-200 overflow-hidden">
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div>
+        <div id="events-heading-block">
           <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 block mb-3">03 // Events & Meetups</span>
           <h2 class="font-outfit font-extrabold text-4xl sm:text-6xl text-slate-900 tracking-tight">
             Flagship <span class="text-gradient-blue">Pune Gatherings</span>
           </h2>
         </div>
-        <p class="text-slate-600 text-sm max-w-md font-medium">
+        <p id="events-description" class="text-slate-600 text-sm max-w-md font-medium">
           Scroll down to horizontally explore upcoming curated meetups, hackathons, and founder mixers across Pune.
         </p>
       </div>
@@ -491,7 +512,7 @@
       <div class="horizontal-events-track flex gap-8 px-4 sm:px-6 lg:px-12 w-max">
         
         <!-- Event Card 1 -->
-        <div class="w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-indigo-400 transition-colors">
+        <div class="event-card w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-indigo-400 transition-colors">
           <div>
             <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
               <img src="assets/images/pune_community_hero.jpg" alt="AI Summit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -514,7 +535,7 @@
         </div>
 
         <!-- Event Card 2 -->
-        <div class="w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-pink-400 transition-colors">
+        <div class="event-card w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-pink-400 transition-colors">
           <div>
             <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
               <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&auto=format&fit=crop&q=80" alt="Design Mixer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -537,7 +558,7 @@
         </div>
 
         <!-- Event Card 3 -->
-        <div class="w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-blue-400 transition-colors">
+        <div class="event-card w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-blue-400 transition-colors">
           <div>
             <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80" alt="VC Pitch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -560,7 +581,7 @@
         </div>
 
         <!-- Event Card 4 -->
-        <div class="w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-emerald-400 transition-colors">
+        <div class="event-card w-[320px] sm:w-[420px] glass-panel rounded-3xl p-6 border-slate-200 bg-white shadow-xl flex flex-col justify-between group hover:border-emerald-400 transition-colors">
           <div>
             <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
               <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80" alt="Hackathon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -716,7 +737,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Member 1 -->
-        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-indigo-400 transition-all group shadow-md" data-category="founder">
+        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-indigo-400 transition-all group shadow-md cursor-pointer" data-category="founder" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false">
           <div class="flex items-center gap-4 mb-4">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Member" class="w-14 h-14 rounded-2xl object-cover border-2 border-indigo-400" />
             <div>
@@ -739,7 +760,7 @@
         </div>
 
         <!-- Member 2 -->
-        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-pink-400 transition-all group shadow-md" data-category="design">
+        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-pink-400 transition-all group shadow-md cursor-pointer" data-category="design" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false">
           <div class="flex items-center gap-4 mb-4">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="Member" class="w-14 h-14 rounded-2xl object-cover border-2 border-pink-400" />
             <div>
@@ -762,7 +783,7 @@
         </div>
 
         <!-- Member 3 -->
-        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-blue-400 transition-all group shadow-md" data-category="tech">
+        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-blue-400 transition-all group shadow-md cursor-pointer" data-category="tech" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false">
           <div class="flex items-center gap-4 mb-4">
             <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80" alt="Member" class="w-14 h-14 rounded-2xl object-cover border-2 border-blue-400" />
             <div>
@@ -785,7 +806,7 @@
         </div>
 
         <!-- Member 4 -->
-        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-amber-400 transition-all group shadow-md" data-category="creator">
+        <div class="member-card glass-panel rounded-3xl p-6 border-slate-200 bg-white hover:border-amber-400 transition-all group shadow-md cursor-pointer" data-category="creator" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false">
           <div class="flex items-center gap-4 mb-4">
             <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80" alt="Member" class="w-14 h-14 rounded-2xl object-cover border-2 border-amber-400" />
             <div>
@@ -809,6 +830,32 @@
 
       </div>
     </section>
+
+    <!-- MEMBER SPOTLIGHT INTERACTIVE FOCUS OVERLAY -->
+    <div id="member-spotlight-overlay" class="fixed inset-0 z-[9950] hidden opacity-0 pointer-events-none items-center justify-center p-4">
+      <div id="spotlight-backdrop" class="absolute inset-0 bg-slate-950/45 backdrop-blur-md"></div>
+      
+      <div id="spotlight-card" class="relative z-[9960] w-full max-w-md flex flex-col items-center text-center pointer-events-auto my-auto">
+        <!-- Floating enlarged profile photo -->
+        <img id="spotlight-img" src="" alt="Member" class="object-cover pointer-events-auto border-2 border-indigo-400" />
+
+        <!-- Close button for mobile / desktop affordance -->
+        <button id="spotlight-close-btn" class="absolute -top-12 right-2 sm:-right-4 w-9 h-9 rounded-full bg-white/90 text-slate-700 hover:text-slate-950 flex items-center justify-center shadow-lg border border-slate-200 transition-transform hover:scale-110 z-[9999]" aria-label="Close spotlight">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+
+        <!-- Dynamic details card displayed below the image -->
+        <div id="spotlight-info" class="w-full bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 shadow-2xl space-y-3 relative z-[9970]">
+          <h3 id="spotlight-name" class="font-outfit font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight"></h3>
+          <p id="spotlight-role" class="text-xs sm:text-sm font-mono font-bold text-indigo-600"></p>
+          <p id="spotlight-bio" class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto font-medium"></p>
+          
+          <div id="spotlight-tags" class="flex flex-wrap items-center justify-center gap-1.5 pt-1"></div>
+
+          <div id="spotlight-footer" class="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-100 font-medium"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- PUNE COMMUNITY IMPACT STATS -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200">
@@ -926,13 +973,13 @@
     </section>
 
     <!-- TESTIMONIALS (SWIPER CAROUSEL) -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section id="testimonials" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white overflow-hidden">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono font-bold uppercase tracking-widest text-pink-600 block mb-3">07 // Member Testimonials</span>
-        <h2 class="font-outfit font-extrabold text-4xl sm:text-6xl text-slate-900 tracking-tight mb-4">
+        <span id="testimonials-label" class="text-xs font-mono font-bold uppercase tracking-widest text-pink-600 block mb-3">07 // Member Testimonials</span>
+        <h2 id="testimonials-heading" class="font-outfit font-extrabold text-4xl sm:text-6xl text-slate-900 tracking-tight mb-4">
           Voices From <span class="text-gradient-pink">The Circle</span>
         </h2>
-        <p class="text-slate-600 text-base">
+        <p id="testimonials-desc" class="text-slate-600 text-base">
           What Pune's founders and engineers are saying about their community experience.
         </p>
       </div>
@@ -943,17 +990,22 @@
           
           <!-- Slide 1 -->
           <div class="swiper-slide">
-            <div class="glass-panel p-8 rounded-3xl border-slate-200 bg-white h-full flex flex-col justify-between shadow-md">
-              <div class="mb-6">
-                <div class="text-amber-500 text-sm mb-4">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testimonial-card glass-panel p-8 rounded-3xl border-slate-200 bg-white h-full flex flex-col justify-between shadow-md relative overflow-hidden group transition-all duration-300" data-theme="indigo">
+              <div class="testimonial-light-sweep" aria-hidden="true"></div>
+              <div class="mb-6 relative z-10">
+                <div class="testimonial-stars text-amber-500 text-sm mb-4 flex gap-1">
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
                 </div>
-                <p class="text-slate-700 text-sm leading-relaxed italic">
+                <p class="testimonial-quote text-slate-700 text-sm leading-relaxed italic transition-transform duration-300">
                   "Circle Pune is hands-down the highest density of tech talent I've experienced in Maharashtra. I met my CTO during a Koregaon Park rooftop mixer and raised our pre-seed 2 months later!"
                 </p>
               </div>
-              <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="w-11 h-11 rounded-full object-cover" alt="Avatar" />
+              <div class="flex items-center gap-4 pt-4 border-t border-slate-100 relative z-10">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="testimonial-avatar w-11 h-11 rounded-full object-cover border-2 border-indigo-400 transition-all duration-300" alt="Avatar" />
                 <div>
                   <h5 class="font-outfit font-bold text-slate-900 text-sm">Priya Ranade</h5>
                   <p class="text-xs text-indigo-600 font-mono font-bold">Founder @ SaaSify Baner</p>
@@ -964,17 +1016,22 @@
 
           <!-- Slide 2 -->
           <div class="swiper-slide">
-            <div class="glass-panel p-8 rounded-3xl border-slate-200 bg-white h-full flex flex-col justify-between shadow-md">
-              <div class="mb-6">
-                <div class="text-amber-500 text-sm mb-4">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testimonial-card glass-panel p-8 rounded-3xl border-slate-200 bg-white h-full flex flex-col justify-between shadow-md relative overflow-hidden group transition-all duration-300" data-theme="pink">
+              <div class="testimonial-light-sweep" aria-hidden="true"></div>
+              <div class="mb-6 relative z-10">
+                <div class="testimonial-stars text-amber-500 text-sm mb-4 flex gap-1">
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
                 </div>
-                <p class="text-slate-700 text-sm leading-relaxed italic">
+                <p class="testimonial-quote text-slate-700 text-sm leading-relaxed italic transition-transform duration-300">
                   "As a product designer, finding high-signal feedback in Pune used to be tough. Circle Pune's Design Nights gave me immediate access to senior design directors across India."
                 </p>
               </div>
-              <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" class="w-11 h-11 rounded-full object-cover" alt="Avatar" />
+              <div class="flex items-center gap-4 pt-4 border-t border-slate-100 relative z-10">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" class="testimonial-avatar w-11 h-11 rounded-full object-cover border-2 border-pink-400 transition-all duration-300" alt="Avatar" />
                 <div>
                   <h5 class="font-outfit font-bold text-slate-900 text-sm">Sameer Kulkarni</h5>
                   <p class="text-xs text-pink-600 font-mono font-bold">Lead Designer @ KP Studio</p>
@@ -985,17 +1042,22 @@
 
           <!-- Slide 3 -->
           <div class="swiper-slide">
-            <div class="glass-panel p-8 rounded-3xl border-slate-200 bg-white h-full flex flex-col justify-between shadow-md">
-              <div class="mb-6">
-                <div class="text-amber-500 text-sm mb-4">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testimonial-card glass-panel p-8 rounded-3xl border-slate-200 bg-white h-full flex flex-col justify-between shadow-md relative overflow-hidden group transition-all duration-300" data-theme="blue">
+              <div class="testimonial-light-sweep" aria-hidden="true"></div>
+              <div class="mb-6 relative z-10">
+                <div class="testimonial-stars text-amber-500 text-sm mb-4 flex gap-1">
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
+                  <i class="fa-solid fa-star star-icon"></i>
                 </div>
-                <p class="text-slate-700 text-sm leading-relaxed italic">
+                <p class="testimonial-quote text-slate-700 text-sm leading-relaxed italic transition-transform duration-300">
                   "The quality of code sprints in Hinjewadi is insane. Within 24 hours at HackPune, our team shipped an AI agent that got featured on ProductHunt!"
                 </p>
               </div>
-              <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80" class="w-11 h-11 rounded-full object-cover" alt="Avatar" />
+              <div class="flex items-center gap-4 pt-4 border-t border-slate-100 relative z-10">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80" class="testimonial-avatar w-11 h-11 rounded-full object-cover border-2 border-blue-400 transition-all duration-300" alt="Avatar" />
                 <div>
                   <h5 class="font-outfit font-bold text-slate-900 text-sm">Vikram Shinde</h5>
                   <p class="text-xs text-blue-600 font-mono font-bold">AI Developer @ Hinjewadi</p>
@@ -1050,22 +1112,26 @@
 
     <!-- CALL TO ACTION SECTION -->
     <section class="py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative overflow-hidden">
-      <div class="glass-panel p-10 sm:p-16 rounded-[2.5rem] border-indigo-200 bg-gradient-to-br from-indigo-50 via-pink-50 to-amber-50 relative z-10 shadow-2xl">
+      <div id="cta-glow-container" class="glass-panel p-10 sm:p-16 rounded-[2.5rem] border-indigo-200 bg-gradient-to-br from-indigo-50 via-pink-50 to-amber-50 relative z-10 shadow-2xl overflow-hidden">
         
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 font-mono text-xs uppercase font-extrabold mb-6 shadow-xs">
+        <!-- Continuous Border Glowing Light Track & Aura -->
+        <div class="cta-border-light-track" aria-hidden="true"></div>
+        <div class="cta-border-light-glow" aria-hidden="true"></div>
+
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 font-mono text-xs uppercase font-extrabold mb-6 shadow-xs relative z-10">
           <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 animate-ping"></span>
           NEXT COHORT INVITATIONS OPEN
         </span>
 
-        <h2 class="font-outfit font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight mb-6">
+        <h2 class="font-outfit font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight mb-6 relative z-10">
           Ready To Build Your <span class="text-gradient-purple">Network In Pune?</span>
         </h2>
 
-        <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+        <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-medium relative z-10">
           Join 4,500+ ambitious founders, developers, designers, and creators defining the future of technology and design across Pune.
         </p>
 
-        <div class="flex flex-wrap items-center justify-center gap-5">
+        <div class="flex flex-wrap items-center justify-center gap-5 relative z-10">
           <button class="open-join-modal magnetic-btn px-9 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-pink-600 to-amber-500 text-white font-extrabold text-base shadow-xl shadow-indigo-500/25 hover:scale-105 transition-all">
             Apply For Membership
           </button>
@@ -1365,6 +1431,7 @@
   <script src="js/modules/scroll-effects.js"></script>
   <script src="js/modules/map.js"></script>
   <script src="js/modules/modal.js"></script>
+  <script src="js/modules/member-spotlight.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
