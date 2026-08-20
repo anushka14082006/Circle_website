@@ -253,6 +253,32 @@ body {
 .animate-float-4 { animation: floatCard4 7.5s infinite ease-in-out 1.5s; }
 .animate-badge-bounce { animation: badgeBounce 3s infinite ease-in-out; }
 
+/* Continuous Train Image Gallery Animation */
+@keyframes trainScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.hero-train-track {
+  display: flex;
+  width: max-content;
+  animation: trainScroll 25s linear infinite;
+  will-change: transform;
+}
+
+.hero-train-track:hover {
+  animation-play-state: paused;
+}
+
+.mask-gradient-x {
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
 /* Horizontal Scroll Container */
 .horizontal-scroll-section {
   overflow: hidden;
@@ -341,4 +367,54 @@ body {
   background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(16px);
 }
+
+/* Active Navbar Underline & Glow Styles */
+.nav-link {
+  position: relative;
+  padding: 4px 0;
+  color: var(--text-muted);
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-purple);
+  transform: translateY(-1px);
+}
+
+.nav-link-active {
+  color: #4F46E5 !important;
+  font-weight: 700;
+  text-shadow: 0 0 14px rgba(99, 102, 241, 0.4);
+}
+
+#nav-active-pill {
+  position: absolute;
+  bottom: -4px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #4F46E5, #EC4899, #F59E0B);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.7);
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* Lightbox Image Preview Cursor & Animation Utilities */
+.hero-img-card,
+.member-card,
+.tilt-card,
+.event-card,
+.category-card,
+.story-card,
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+
+#image-lightbox-modal {
+  will-change: opacity;
+}
+
+#lightbox-image-wrapper {
+  will-change: transform, opacity;
+}
+
 
