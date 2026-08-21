@@ -487,5 +487,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Image Train Mobile & Tablet Touch Pause Handlers
+  const trainContainers = document.querySelectorAll('.image-train-container');
+  trainContainers.forEach((container) => {
+    const track = container.querySelector('.image-train-track');
+    if (!track) return;
+
+    container.addEventListener('touchstart', () => {
+      track.classList.add('paused');
+    }, { passive: true });
+
+    container.addEventListener('touchend', () => {
+      track.classList.remove('paused');
+    }, { passive: true });
+
+    container.addEventListener('touchcancel', () => {
+      track.classList.remove('paused');
+    }, { passive: true });
+  });
 });
+
 

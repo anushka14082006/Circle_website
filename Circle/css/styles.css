@@ -253,6 +253,81 @@ body {
 .animate-float-4 { animation: floatCard4 7.5s infinite ease-in-out 1.5s; }
 .animate-badge-bounce { animation: badgeBounce 3s infinite ease-in-out; }
 
+/* Continuous Seamless Horizontal Image Train Carousel Animation System */
+.image-train-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.25rem 0;
+  touch-action: pan-y;
+}
+
+.image-train-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Consistent 24px gap between train carriages */
+  width: max-content;
+  animation: trainMove 34s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover */
+.image-train-container:hover .image-train-track,
+.image-train-track:hover,
+.image-train-track.paused {
+  animation-play-state: paused;
+}
+
+/* Seamless infinite keyframes animation (GPU hardware-accelerated) */
+@keyframes trainMove {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Individual Image Train Carriage Cards */
+.image-train-card {
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Card Hover Elevation */
+.image-train-container:hover .image-train-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  z-index: 25;
+}
+
+/* Image Aspect Ratio & Hover Zoom Dynamics */
+.image-train-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-train-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Responsive adjustments for desktop, tablet, and mobile */
+@media (max-width: 768px) {
+  .image-train-track {
+    gap: 1.25rem; /* 20px consistent gap on tablets */
+    animation-duration: 26s;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-train-track {
+    gap: 1rem; /* 16px consistent gap on mobile */
+    animation-duration: 22s;
+  }
+}
+
+
 /* Horizontal Scroll Container */
 .horizontal-scroll-section {
   overflow: hidden;
